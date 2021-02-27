@@ -20,20 +20,23 @@
         {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a href="{% url 'article_new' %}">+ Nuevo</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ user.username }}
               </a>
               <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'password_change'%}">Cambiar contraseña</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
               </div>
             </li>
           </ul>
         {% else %}
           <form class="form-inline ml-auto">
-            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Iniciar sesión</a>
-            <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Registrarse</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log In</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
           </form>
         {% endif %}
       </div>

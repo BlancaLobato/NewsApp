@@ -1,11 +1,11 @@
-from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Titulo')
-    body = models.TextField(verbose_name='Cuerpo)
+    title = models.CharField(max_length=255, verbose_name='Título')
+    body = models.TextField(verbose_name='Cuerpo')
     date = models.DateTimeField(auto_now_add=True, verbose_name='Fecha')
     author = models.ForeignKey(
         get_user_model(),                         # ó settings.AUTH_USER_MODEL,

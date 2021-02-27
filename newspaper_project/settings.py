@@ -38,15 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #3rd Party
+    # 3rd Party
     'crispy_forms',
 
     # Local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
-    'articles.apps.ArticlesConfig',
+    'articles.apps.ArticlesConfig',  # new
 ]
-TIME_ZONE = 'Europe/Madrid'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,6 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'es'
+
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
