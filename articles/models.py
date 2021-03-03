@@ -8,7 +8,7 @@ class Article(models.Model):
     body = models.TextField(verbose_name='Cuerpo')
     date = models.DateTimeField(auto_now_add=True, verbose_name='Fecha')
     author = models.ForeignKey(
-        get_user_model(),                         # ó settings.AUTH_USER_MODEL,
+        get_user_model(),
         on_delete=models.CASCADE,
         verbose_name='Autor'
     )
@@ -21,12 +21,16 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='Artículo')
+    article = models.ForeignKey(
+        Article,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='Artículo'
+    )
     comment = models.CharField(max_length=140, verbose_name='Comentario')
     author = models.ForeignKey(
-        get_user_model(),         # ó settings.AUTH_USER_MODEL
+        get_user_model(),
         on_delete=models.CASCADE,
-        related_name='comments', # new
         verbose_name='Autor'
     )
 
