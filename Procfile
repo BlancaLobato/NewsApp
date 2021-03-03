@@ -1,1 +1,1 @@
-web: gunicorn newspaper_proyect.wsgi --log-file -
+web: gunicorn newspaper_project.wsgi --log-file -
